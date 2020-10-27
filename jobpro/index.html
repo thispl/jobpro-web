@@ -52,7 +52,7 @@
 					<div class="container clearfix">
 						<!-- website logo -->
 						<div class="logo-header mostion">
-							<a href="index-2.html"><img src="images/logo.png" class="logo" alt=""></a>
+							<a href="http://groupteampro.com/"><img src="images/logo.png" class="logo" alt=""></a>
 						</div>
 						<!-- nav toggle button -->
 						<!-- nav toggle button -->
@@ -99,7 +99,7 @@
 								</ul> -->
 								</li>
 								<!-- <li><a href="submit-resume.html" class="dez-page">Submit Resume</a></li> -->
-								<li><a href="contact.html" class="dez-page">Contact Us</a></li>
+								<li><a href="http://groupteampro.com/contact/" class="dez-page">Contact Us</a></li>
 								<!-- <li>
 								<a href="#">For Employers <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
@@ -152,7 +152,8 @@
 					<div class="dez-bnr-inr-entry align-m ">
 						<div class="find-job-bx">
 							<p class="site-button button-sm">Find Jobs, Employment & Career Opportunities</p>
-							<h2>Search Between More Then <br /> <span class="text-primary">50,000</span> Open Jobs.</h2>
+							<h2 class="text-white">Search Between More Then <br /> <span
+									class="text-primary">50,000</span> Open Jobs.</h2>
 							<form class="dezPlaceAni">
 								<div class="row">
 									<div class="col-lg-4 col-md-6">
@@ -168,36 +169,25 @@
 									</div>
 									<div class="col-lg-3 col-md-6">
 										<div class="form-group">
-											<label>City, State or ZIP</label>
-											<div class="input-group">
+											<!-- <label>City, State or ZIP</label> -->
+											<select id="country"></select>
+											<!-- <div class="input-group">
 												<input type="text" class="form-control" placeholder="">
 												<div class="input-group-append">
 													<span class="input-group-text"><i
 															class="fa fa-map-marker"></i></span>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6">
 										<div class="form-group">
-											<select>
-												<option>Select Sector</option>
-												<option>Construction</option>
-												<option>Corodinator</option>
-												<option>Employer</option>
-												<option>Financial Career</option>
-												<option>Information Technology</option>
-												<option>Marketing</option>
-												<option>Quality check</option>
-												<option>Real Estate</option>
-												<option>Sales</option>
-												<option>Supporting</option>
-												<option>Teaching</option>
-											</select>
+											<select id="category"></select>
 										</div>
 									</div>
 									<div class="col-lg-2 col-md-6">
-										<button type="submit" class="site-button btn-block">Find Job</button>
+										<!-- <button type="submit" id="search" class="site-button btn-block">Find Job</button> -->
+										<a href="#" class="site-button btn-block" id="search">Find Job</a>
 									</div>
 								</div>
 							</form>
@@ -326,17 +316,17 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-3 col-sm-6 col-md-6 m-b30" >
+						<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
 							<a href="job-detail.html" action="GET">
-								<div class="city-bx align-items-end  d-flex" 
-								style="background-image:url(images/city/pic1.jpg)"> 
-								<div class="city-info">
-									<h5>Kuwait</h5>
-									<div id="kuwait"></div>
+								<div class="city-bx align-items-end  d-flex"
+									style="background-image:url(images/city/pic1.jpg)">
+									<div class="city-info">
+										<h5>Kuwait</h5>
+										<div id="kuwait"></div>
+									</div>
 								</div>
-							</div>
 							</a>
-							
+
 						</div>
 						<div class="col-lg-3 col-sm-6 col-md-6 m-b30">
 							<div class="city-bx align-items-end  d-flex"
@@ -452,7 +442,8 @@
 							<div class="m-t30">
 								<div class="d-flex">
 									<!-- <a class="site-button button-sm mr-auto" href="#"><i class="ti-arrow-left"></i></a> -->
-									<a class="site-button button-sm" href="#">See More Jobs <i class="ti-arrow-right"></i></a>
+									<a class="site-button button-sm" href="#">See More Jobs <i
+											class="ti-arrow-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -567,13 +558,17 @@
 										</form>
 									</div>
 									<ul class="list-inline m-a0">
-										<li><a href="https://www.facebook.com/teamprohr/" class="site-button white facebook circle "><i
+										<li><a href="https://www.facebook.com/teamprohr/"
+												class="site-button white facebook circle "><i
 													class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.linkedin.com/company/teampro-hr-it-services-pvt-ltd" class="site-button white linkedin circle "><i
+										<li><a href="https://www.linkedin.com/company/teampro-hr-it-services-pvt-ltd"
+												class="site-button white linkedin circle "><i
 													class="fa fa-linkedin"></i></a></li>
-										<li><a href="https://www.instagram.com/teampro_hr/" class="site-button white instagram circle "><i
+										<li><a href="https://www.instagram.com/teampro_hr/"
+												class="site-button white instagram circle "><i
 													class="fa fa-instagram"></i></a></li>
-										<li><a href="https://twitter.com/Teampro_hr" class="site-button white twitter circle "><i
+										<li><a href="https://twitter.com/Teampro_hr"
+												class="site-button white twitter circle "><i
 													class="fa fa-twitter"></i></a></li>
 									</ul>
 								</div>
@@ -639,11 +634,12 @@
 		<script src='js/recaptcha/api.js'></script> <!-- Google API For Recaptcha  -->
 		<script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 		<script src="plugins/paroller/skrollr.min.js"></script><!-- PAROLLER -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
 		<script>
 			// $("#task_id") = "KWT"
-			var baseurl = "https://v13.teamproit.com/"
-			var task = "api/resource/Task?fields=[%22name%22,%22subject%22,%22territory%22,%22customer%22,%22currency%22,%22amount%22,%22amount%22,%22job_category%22]&&filters=[[%22service%22,%22=%22,%22REC%22],[%22status%22,%22!=%22,%22Completed%22],[%22status%22,%22!=%22,%22Cancelled%22],[%22status%22,%22!=%22,%22Hold%22]]&&limit_page_length=5000"
+			var baseurl = "https://v13.teamproit.com/api/resource/"
+			var task = "Task?fields=[%22name%22,%22subject%22,%22territory%22,%22description%22,%22customer%22,%22project%22,%22currency%22,%22amount%22,%22amount%22,%22job_category%22,%22creation%22,%22minimum_experience%22,%22maximum_experience%22,%22qualification%22,%22specialization%22]&&filters=[[%22service%22,%22=%22,%22REC%22],[%22status%22,%22!=%22,%22Completed%22],[%22status%22,%22!=%22,%22Cancelled%22],[%22status%22,%22!=%22,%22Hold%22]]&&limit_page_length=5000"
 			$(document).ready(function () {
 				$.ajax({
 					type: "GET",
@@ -651,6 +647,10 @@
 					data: '$format=json',
 					dataType: 'json',
 					success: function (data) {
+						$.each(data.data, function (i, d) {
+							var t = JSON.stringify(d)
+							localStorage.setItem(d.name, t)
+						})
 						// var task_list = JSON.stringify(data.data)
 						// localStorage.setItem("task_list",task_list)
 						$('#jobs-posted').append(
@@ -677,8 +677,8 @@
 							if (d < 20) {
 								$("#task").append(
 									'<li>\
-										<a href=#>\
-											<div id="kwt" name='+task.name+' onclick="open_job_detail()" class="d-flex m-b30">\
+										<a href="job-detail.html">\
+											<div id='+ task.name + ' name=' + task.name + ' onclick="open_job_detail(this.id)" class="d-flex m-b30">\
 												<div class="job-post-company">\
 													<span><img src="images/logo/icon1.png"/></span>\
 												</div>\
@@ -696,7 +696,7 @@
 													<span>Apply Now </span>\
 												</div>\
 												<div class="salary-bx">\
-													<span>'+ task.amount +' '+ task.currency +'</span>\
+													<span>'+ task.amount + ' ' + task.currency + '</span>\
 												</div>\
 											</div>\
 											<span class="post-like fa fa-heart-o"></span>\
@@ -704,103 +704,103 @@
 									</li>'
 								)
 							}
-							if(task.territory == "Kuwait"){
+							if (task.territory == "Kuwait") {
 								kuwait++
 							}
-							else if(task.territory == "Oman"){
+							else if (task.territory == "Oman") {
 								oman++
 							}
-							else if(task.territory == "UAE"){
+							else if (task.territory == "UAE") {
 								uae++
 							}
-							else if(task.territory == "Bahrain"){
+							else if (task.territory == "Bahrain") {
 								bahrain++
 							}
-							else if(task.territory == "KSA"){
+							else if (task.territory == "KSA") {
 								ksa++
 							}
-							else if(task.territory == "Riyadh"){
+							else if (task.territory == "Riyadh") {
 								riyadh++
 							}
-							else if(task.territory == "Qatar"){
+							else if (task.territory == "Qatar") {
 								qatar++
 							}
-							else if(task.territory == "Tamil Nadu"){
+							else if (task.territory == "Tamil Nadu") {
 								tamilnadu++
 							}
-							if(task.job_category == "Information Technology"){
+							if (task.job_category == "Information Technology") {
 								it++
 							}
-							else if(task.job_category == "Sales & Marketing"){
+							else if (task.job_category == "Sales & Marketing") {
 								sm++
 							}
-							else if(task.job_category == "Electrical & Electronics"){
+							else if (task.job_category == "Electrical & Electronics") {
 								ee++
 							}
-							else if(task.job_category == "Restaurant / Food Service"){
+							else if (task.job_category == "Restaurant / Food Service") {
 								food++
 							}
-							else if(task.job_category == "Construction / Facilities"){
+							else if (task.job_category == "Construction / Facilities") {
 								cons++
 							}
-							else if(task.job_category == "Automobile"){
+							else if (task.job_category == "Automobile") {
 								am++
 							}
-							else if(task.job_category == "Accounting / Finance"){
+							else if (task.job_category == "Accounting / Finance") {
 								af++
 							}
-							else if(task.job_category == "Human Resource"){
+							else if (task.job_category == "Human Resource") {
 								hr++
 							}
-							
+
 						})
 						$('#kuwait').append(
-						'<span>'+ kuwait +' Jobs<span>'
+							'<span>' + kuwait + ' Jobs<span>'
 						)
 						$('#oman').append(
-						'<span>'+ oman +' Jobs<span>'
+							'<span>' + oman + ' Jobs<span>'
 						)
 						$('#uae').append(
-						'<span>'+ uae +' Jobs<span>'
+							'<span>' + uae + ' Jobs<span>'
 						)
 						$('#bahrain').append(
-						'<span>'+ bahrain +' Jobs<span>'
+							'<span>' + bahrain + ' Jobs<span>'
 						)
 						$('#ksa').append(
-						'<span>'+ ksa +' Jobs<span>'
+							'<span>' + ksa + ' Jobs<span>'
 						)
 						$('#riyadh').append(
-						'<span>'+ riyadh +' Jobs<span>'
+							'<span>' + riyadh + ' Jobs<span>'
 						)
 						$('#qatar').append(
-						'<span>'+ qatar +' Jobs<span>'
+							'<span>' + qatar + ' Jobs<span>'
 						)
 						$('#tamilnadu').append(
-						'<span>'+ tamilnadu +' Jobs<span>'
+							'<span>' + tamilnadu + ' Jobs<span>'
 						)
 						$('#it').append(
-						'<p class="m-a0">'+ it +' Open Positions</p>'
+							'<p class="m-a0">' + it + ' Open Positions</p>'
 						)
 						$('#sm').append(
-						'<p class="m-a0">'+ sm +' Open Positions</p>'
+							'<p class="m-a0">' + sm + ' Open Positions</p>'
 						)
 						$('#ee').append(
-						'<p class="m-a0">'+ ee +' Open Positions</p>'
+							'<p class="m-a0">' + ee + ' Open Positions</p>'
 						)
 						$('#food').append(
-						'<p class="m-a0">'+ food +' Open Positions</p>'
+							'<p class="m-a0">' + food + ' Open Positions</p>'
 						)
 						$('#cons').append(
-						'<p class="m-a0">'+ cons +' Open Positions</p>'
+							'<p class="m-a0">' + cons + ' Open Positions</p>'
 						)
 						$('#am').append(
-						'<p class="m-a0">'+ am +' Open Positions</p>'
+							'<p class="m-a0">' + am + ' Open Positions</p>'
 						)
 						$('#af').append(
-						'<p class="m-a0">'+ af +' Open Positions</p>'
+							'<p class="m-a0">' + af + ' Open Positions</p>'
 						)
 						$('#hr').append(
-						'<p class="m-a0">'+ hr +' Open Positions</p>'
+							'<p class="m-a0">' + hr + ' Open Positions</p>'
 						)
 					}
 				})
@@ -827,10 +827,42 @@
 				//   })
 				//   } 
 				//   });
+				var cat = "Category?limit_page_length=100"
+				axios
+					.get(baseurl + cat)
+					.then(response => (
+						console.log(response.data.data),
+						$.each(response.data.data, function (i, d) {
+							$('#category').append($("<option></option>").attr("value", d.name).text(d.name))
+						})
+					)
+					)
+				var country = "Territory?limit_page_length=1000"
+				axios
+					.get(baseurl + country)
+					.then(response => (
+						$.each(response.data.data, function (i, d) {
+							$('#country').append($("<option></option>").attr("value", d.name).text(d.name))
+						})
+					)
+					)
 
+			})
 
-			});
+			// $(search).click(function () {
 
+			// 	var cat = document.getElementById("category").value
+			// 	var ctry = document.getElementById("country").value
+			// 	console.log(cat)
+			// 	console.log(ctry)
+			// 	var task = ''
+			// 	var search = "Task?fields=[%22name%22,%22subject%22,%22territory%22,%22description%22,%22customer%22,%22project%22,%22currency%22,%22amount%22,%22amount%22,%22job_category%22,%22creation%22,%22minimum_experience%22,%22maximum_experience%22,%22qualification%22,%22specialization%22]&&filters=[[%22service%22,%22=%22,%22REC%22],[%22status%22,%22!=%22,%22Completed%22],[%22status%22,%22!=%22,%22Cancelled%22],[%22status%22,%22!=%22,%22Hold%22],[%22job_category%22,%22=%22,%22"+cat+"%22],[%22territory%22,%22=%22,%22"+ctry+"%22]]&&limit_page_length=5000"
+			// 	axios
+			// 		.get(baseurl + search)
+			// 		.then(response =>
+			// 		console.log(response)
+			// 		)
+			// })
 		</script>
 
 </body>

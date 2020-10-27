@@ -1,9 +1,15 @@
 // window.addEventListener('load',() =>{
-    
+		
 // })
-function open_job_detail(){
-    var t = document.getElementById("kwt")
-    console.log(t)
+function open_job_detail(id){
+    console.log("Test")
+    // var t = document.getElementById("ts")
+    localStorage.setItem("selected_job",id)
+}
 
-    // localStorage.setItem("value1",t)
+function open_browse_job(id){
+    console.log("browse")
+    console.log(id)
+    // var t = document.getElementById("ts")
+    // localStorage.setItem("selected_job",id)
 }

@@ -53,7 +53,7 @@
 					<div class="container clearfix">
 						<!-- website logo -->
 						<div class="logo-header mostion">
-							<a href="index-2.html"><img src="images/logo.png" class="logo" alt=""></a>
+							<a href="http://groupteampro.com/"><img src="images/logo.png" class="logo" alt=""></a>
 						</div>
 						<!-- nav toggle button -->
 						<!-- nav toggle button -->
@@ -84,7 +84,7 @@
 						<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
 							<ul class="nav navbar-nav">
 								<li class="active">
-									<a href="#">Home <i class="fa fa-chevron-down"></i></a>
+									<a href="index.html">Home <i class="fa fa-chevron-down"></i></a>
 									<!-- <ul class="sub-menu">
 									<li><a href="index-2.html" class="dez-page">Home 1</a></li>
 									<li><a href="index-3.html" class="dez-page">Home 2</a></li>
@@ -100,7 +100,7 @@
 								</ul> -->
 								</li>
 								<!-- <li><a href="submit-resume.html" class="dez-page">Submit Resume</a></li> -->
-								<li><a href="contact.html" class="dez-page">Contact Us</a></li>
+								<li><a href="http://groupteampro.com/contact/" class="dez-page">Contact Us</a></li>
 								<!-- <li>
 								<a href="#">For Employers <i class="fa fa-chevron-down"></i></a>
 								<ul class="sub-menu">
@@ -174,7 +174,7 @@
 								<form>
 									<div class="form-group">
 										<label>Your name</label>
-										<input type="text" id="name" class="form-control" placeholder="Your Full Name">
+										<input type="text" id="name" class="form-control" placeholder="Your Full Name" required>
 									</div>
 									<div class="form-group">
 										<label>Date of Birth</label>
@@ -190,11 +190,13 @@
 									</div>
 									<div class="form-group">
 										<label>Address Line 1</label>
-										<input type="text" id="add_l1" class="form-control" placeholder="Address Line 1">
+										<input type="text" id="add_l1" class="form-control"
+											placeholder="Address Line 1">
 									</div>
 									<div class="form-group">
 										<label>Address Line 2</label>
-										<input type="text" id="add_l2" class="form-control" placeholder="Address Line 2">
+										<input type="text" id="add_l2" class="form-control"
+											placeholder="Address Line 2">
 									</div>
 							</div>
 							<div class="col-lg-6">
@@ -204,61 +206,45 @@
 								</div>
 								<div class="form-group">
 									<label>Mobile Number</label>
-									<input type="text" id="mobile" class="form-control" placeholder="Your Mobile Number">
+									<input type="text" id="mobile" class="form-control"
+										placeholder="Your Mobile Number">
 								</div>
 								<div class="form-group">
-									<label >City</label>
-									<!-- <select> -->
-										<div id="city"></div>
-									<!-- </select> -->
+									<label>City</label>
+									<select id="city"></select>
 								</div>
 								<div class="form-group">
 									<label>State</label>
-									<select>
-										<option>Tamil Nadu</option>
-										<option>Karnataka</option>
-									</select>
+										<select id="state"></select>
 								</div>
 								<div class="form-group">
 									<label>Country</label>
-									<select>
-										<option>Inida</option>
-										<option>USA</option>
-									</select>
+									<select id="country"></select>
 								</div>
 							</div>
 						</div>
 						<hr>
 						<div class="row">
 							<div class="col-lg-6">
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label>Do you have Passport ?</label>
 									<select id="pp">
 										<option>Yes</option>
 										<option>No</option>
 									</select>
-								</div>
+								</div> -->
 								<div class="form-group">
 									<label>Passport No</label>
 									<input type="text" id="pp_no" class="form-control" placeholder="Passport No">
 								</div>
 								<div class="form-group">
 									<label>Place of Issue</label>
-									<select>
-										<option>Chennai</option>
-										<option>Coimbatore</option>
-									</select>
+									<select id="pp_place"></select>
 								</div>
 								<div class="form-group">
 									<label>Resume</label>
 									<div class="custom-file">
 										<input type="file" id="resume" class="site-button" id="customFile">
-									</div>
-								</div>
-								<div class="form-group">
-									<label>Photo</label>
-									<div class="custom-file">
-										<input type="file" class="site-button" id="customFile">
 									</div>
 								</div>
 								</form>
@@ -272,7 +258,14 @@
 									<label>Expiry Date</label>
 									<input type="date" id="expiry" class="form-control" placeholder="dd/mm/yyyy">
 								</div>
+								<div class="form-group">
+									<label>Photo</label>
+									<div class="custom-file">
+										<input type="file" class="site-button" id="customFile">
+									</div>
+								</div>
 							</div>
+
 						</div>
 						<hr>
 						<center><button type="submit" id="submit" class="site-button">Submit</button></center>
@@ -291,12 +284,14 @@
 					<div class="col-xl-5 col-lg-4 col-md-12 col-sm-12">
 						<div class="widget">
 							<img src="images/logo-white.png" width="180" class="m-b15" alt="" />
-							<p class="text-capitalize m-b20">Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry has been the industry's standard dummy text ever since the..
-							</p>
+							<p class="text-capitalize m-b20">TeamPRO HR & IT Services Pvt Ltd,<br>
+								No.61, Second floor, Samayapuram Second Street,<br>
+								Karambakkam, Porur, Chennai- 600 116,<br>
+								Tele : +91 44 42125953 </p>
 							<div class="subscribe-form m-b20">
 								<form class="dzSubscribe"
-									action="http://job-board.w3itexperts.com/xhtml/script/mailchamp.php" method="post">
+									action="http://job-board.w3itexperts.com/xhtml/script/mailchamp.php"
+									method="post">
 									<div class="dzSubscribeMsg"></div>
 									<div class="input-group">
 										<input name="dzEmail" required="required" class="form-control"
@@ -309,35 +304,24 @@
 								</form>
 							</div>
 							<ul class="list-inline m-a0">
-								<li><a href="#" class="site-button white facebook circle "><i
+								<li><a href="https://www.facebook.com/teamprohr/" class="site-button white facebook circle "><i
 											class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="site-button white google-plus circle "><i
-											class="fa fa-google-plus"></i></a></li>
-								<li><a href="#" class="site-button white linkedin circle "><i
+								<li><a href="https://www.linkedin.com/company/teampro-hr-it-services-pvt-ltd" class="site-button white linkedin circle "><i
 											class="fa fa-linkedin"></i></a></li>
-								<li><a href="#" class="site-button white instagram circle "><i
+								<li><a href="https://www.instagram.com/teampro_hr/" class="site-button white instagram circle "><i
 											class="fa fa-instagram"></i></a></li>
-								<li><a href="#" class="site-button white twitter circle "><i
+								<li><a href="https://twitter.com/Teampro_hr" class="site-button white twitter circle "><i
 											class="fa fa-twitter"></i></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-xl-5 col-lg-5 col-md-8 col-sm-8 col-12">
 						<div class="widget border-0">
-							<h5 class="m-b30 text-white">Frequently Asked Questions</h5>
-							<ul class="list-2 list-line">
-								<li><a href="#">Privacy & Seurty</a></li>
-								<li><a href="#">Terms of Serice</a></li>
-								<li><a href="#">Communications</a></li>
-								<li><a href="#">Referral Terms</a></li>
-								<li><a href="#">Lending Licnses</a></li>
-								<li><a href="#">Support</a></li>
-								<li><a href="#">How It Works</a></li>
-								<li><a href="#">For Employers</a></li>
-								<li><a href="#">Underwriting</a></li>
+							<h5 class="m-b30 text-white">More Options</h5>
+							<ul class="list-2 w10 list-line">
+								<li><a href="#">Browse Jobs</a></li>
+								<li><a href="#">Submit Resume</a></li>
 								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Lending Licnses</a></li>
-								<li><a href="#">Support</a></li>
 							</ul>
 						</div>
 					</div>
@@ -345,12 +329,12 @@
 						<div class="widget border-0">
 							<h5 class="m-b30 text-white">Find Jobs</h5>
 							<ul class="list-2 w10 list-line">
-								<li><a href="#">US Jobs</a></li>
-								<li><a href="#">Canada Jobs</a></li>
-								<li><a href="#">UK Jobs</a></li>
-								<li><a href="#">Emplois en Fnce</a></li>
-								<li><a href="#">Jobs in Deuts</a></li>
-								<li><a href="#">Vacatures China</a></li>
+								<li><a href="#">Kuwait Jobs</a></li>
+								<li><a href="#">Oman Jobs</a></li>
+								<li><a href="#">Qatar Jobs</a></li>
+								<li><a href="#">UAE</a></li>
+								<li><a href="#">Bahrain</a></li>
+								<li><a href="#">KSA</a></li>
 							</ul>
 						</div>
 					</div>
@@ -362,7 +346,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center"><span><a target="_blank"
-								href="https://www.templateshub.net">Templates Hub</a></span></div>
+								href="https://groupteampro.com">Powered By TeamPRO</a></span></div>
 				</div>
 			</div>
 		</div>
@@ -390,8 +374,9 @@
 	<script src='js/recaptcha/api.js'></script> <!-- Google API For Recaptcha  -->
 	<script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 	<script src="plugins/paroller/skrollr.min.js"></script><!-- PAROLLER -->
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>1
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script type="text/javascript">
+	
 
 
 		$("#exp-slider-range").slider({
@@ -420,71 +405,71 @@
 
 	</script>
 	<script>
+		// var select = document.getElementById("city");
 		var baseurl = "https://v13.teamproit.com/api/resource/"
 		var district = "District?limit_page_length=1000"
-		// var city = []
+		var state = "State?limit_page_length=1000"
+		var country = "Country?limit_page_length=1000"
+		// var city = "Tamil Nadu";
 		axios
-			.get(baseurl+district)
+			.get(baseurl + district)
 			.then(response => (
 				$.each(response.data.data, function (i, d) {
-					$('city').append(
-						'test\
-						test1'
-						// '<select>\
-						// <option value="free">Free</option>\
-						// <option value="starter" selected>Starter </option>\
-						// <option value="professional">Professional</option>\
-						// <option value="corporate">Corporate</option>\
-						// <select>'
-
-						// '<option value='+d.name+' selected>'+d.name+'</option>'
-					)
+					$('#city').append($("<option></option>").attr("value", i).text(d.name))
 				})
-				// c = document.getElementById("city").value
-				
-				))
-				.then(console.log(document.getElementById("city").value))
-				
-			
-		// $(document).ready(function () {
-		// 	$.ajax({
-		// 		type: "GET",
-		// 		url: baseurl + district,
-		// 		data: '$format=json',
-		// 		dataType: 'json',
-		// 		success: function (data) {
-		// 			// $('city').append(
-		// 			// 	'<option>test</option>\
-		// 			// 	<option>test1</option>'
-		// 			// )
-		// 			$.each(data.data, function (i, city) {
-		// 				// console.log(city.name)
-		// 				$("#city").append(
-		// 					'<option>' + city + '</option>'
-		// 				)
-		// 			})
-		// 		}
-		// 	})
-		// })
+			)
+			)
+		axios
+			.get(baseurl + state)
+			.then(response => (
+				$.each(response.data.data, function (i, d) {
+					$('#state').append($("<option></option>").attr("value", i).text(d.name))
+				})
+			)
+			)
+		axios
+			.get(baseurl + country)
+			.then(response => (
+				$.each(response.data.data, function (i, d) {
+					$('#country').append($("<option></option>").attr("value", i).text(d.name))
+				})
+			)
+			)
+		axios
+			.get(baseurl + district)
+			.then(response => (
+				$.each(response.data.data, function (i, d) {
+					$('#pp_place').append($("<option></option>").attr("value", i).text(d.name))
+				})
+			)
+			)
 		$(submit).click(function () {
-			// axios
-			// 	.post(baseurl + "Candidate", {
-			// 		given_name: document.getElementById("name").value,
-			// 		dob: document.getElementById("dob").value,
-			// 		gender: document.getElementById("gender").value,
-			// 		address: address,
-			// 		mail_id: document.getElementById("email").value,
-			// 		mobile: document.getElementById("mobile").value,
-			// 		passport_no: document.getElementById("pp_no").value,
-			// 		issued_date: document.getElementById("issue").value,
-			// 		expiry_date: document.getElementById("expiry").value,
-			// 		passport: document.getElementById("resume").value
-			// 	})
-			// 	.then(response => (console.log(response.data)));
-			// axios
-			// 	.post("https://v13.teamproit.com/api/method/upload_file",{
-			// 		file : "/home/subash/Downloads/jobpro/jobpro/about-us.html"
-			// 	})
+			axios
+				.post(baseurl + "Candidate", {
+					given_name: document.getElementById("name").value,
+					dob: document.getElementById("dob").value,
+					gender: document.getElementById("gender").value,
+					// address: address,
+					mail_id: document.getElementById("email").value,
+					mobile: document.getElementById("mobile").value,
+					passport_no: document.getElementById("pp_no").value,
+					issued_date: document.getElementById("issue").value,
+					expiry_date: document.getElementById("expiry").value,
+					passport: document.getElementById("resume").value
+				})
+				.then((response) => {
+					console.log(response.data.data.name)
+					localStorage.setItem("candidate_id",response.data.data.name)
+					var file = document.querySelector('#resume');
+					let formData = new FormData();
+					formData.append("doctype", "Candidate");
+					formData.append("docname", response.data.name);
+					formData.append("filename", response.data.given_name);
+					formData.append("filedata", file.files[0].path);
+					axios.post('https://v13.teamproit.com/api/method/upload_file', formData)
+						.then(res => { console.log(res) })
+				});
+
 		})
 	</script>
 </body>
