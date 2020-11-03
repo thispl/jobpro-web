@@ -174,7 +174,8 @@
 								<form>
 									<div class="form-group">
 										<label>Your name</label>
-										<input type="text" id="name" class="form-control" placeholder="Your Full Name" required>
+										<input type="text" id="name" class="form-control" placeholder="Your Full Name"
+											required>
 									</div>
 									<div class="form-group">
 										<label>Date of Birth</label>
@@ -211,11 +212,11 @@
 								</div>
 								<div class="form-group">
 									<label>City</label>
-									<select id="city"></select>
+									<select id="City"></select>
 								</div>
 								<div class="form-group">
 									<label>State</label>
-										<select id="state"></select>
+									<select id="state"></select>
 								</div>
 								<div class="form-group">
 									<label>Country</label>
@@ -290,8 +291,7 @@
 								Tele : +91 44 42125953 </p>
 							<div class="subscribe-form m-b20">
 								<form class="dzSubscribe"
-									action="http://job-board.w3itexperts.com/xhtml/script/mailchamp.php"
-									method="post">
+									action="http://job-board.w3itexperts.com/xhtml/script/mailchamp.php" method="post">
 									<div class="dzSubscribeMsg"></div>
 									<div class="input-group">
 										<input name="dzEmail" required="required" class="form-control"
@@ -304,14 +304,17 @@
 								</form>
 							</div>
 							<ul class="list-inline m-a0">
-								<li><a href="https://www.facebook.com/teamprohr/" class="site-button white facebook circle "><i
-											class="fa fa-facebook"></i></a></li>
-								<li><a href="https://www.linkedin.com/company/teampro-hr-it-services-pvt-ltd" class="site-button white linkedin circle "><i
-											class="fa fa-linkedin"></i></a></li>
-								<li><a href="https://www.instagram.com/teampro_hr/" class="site-button white instagram circle "><i
-											class="fa fa-instagram"></i></a></li>
-								<li><a href="https://twitter.com/Teampro_hr" class="site-button white twitter circle "><i
-											class="fa fa-twitter"></i></a></li>
+								<li><a href="https://www.facebook.com/teamprohr/"
+										class="site-button white facebook circle "><i class="fa fa-facebook"></i></a>
+								</li>
+								<li><a href="https://www.linkedin.com/company/teampro-hr-it-services-pvt-ltd"
+										class="site-button white linkedin circle "><i class="fa fa-linkedin"></i></a>
+								</li>
+								<li><a href="https://www.instagram.com/teampro_hr/"
+										class="site-button white instagram circle "><i class="fa fa-instagram"></i></a>
+								</li>
+								<li><a href="https://twitter.com/Teampro_hr"
+										class="site-button white twitter circle "><i class="fa fa-twitter"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -345,8 +348,8 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12 text-center"><span><a target="_blank"
-								href="https://groupteampro.com">Powered By TeamPRO</a></span></div>
+					<div class="col-lg-12 text-center"><span><a target="_blank" href="https://groupteampro.com">Powered
+								By TeamPRO</a></span></div>
 				</div>
 			</div>
 		</div>
@@ -375,8 +378,8 @@
 	<script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 	<script src="plugins/paroller/skrollr.min.js"></script><!-- PAROLLER -->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script type="text/javascript">
-	
+	<script type="text/javascript"></script>
+	<script>
 
 
 		$("#exp-slider-range").slider({
@@ -415,7 +418,7 @@
 			.get(baseurl + district)
 			.then(response => (
 				$.each(response.data.data, function (i, d) {
-					$('#city').append($("<option></option>").attr("value", i).text(d.name))
+					$('#city').append($("<option></option>").attr("value", d.name).text(d.name))
 				})
 			)
 			)
@@ -458,8 +461,8 @@
 					passport: document.getElementById("resume").value
 				})
 				.then((response) => {
-					console.log(response.data.data.name)
-					localStorage.setItem("candidate_id",response.data.data.name)
+					// console.log(response.data.data.name)
+					localStorage.setItem("candidate_id", response.data.data.name)
 					var file = document.querySelector('#resume');
 					let formData = new FormData();
 					formData.append("doctype", "Candidate");
@@ -467,7 +470,7 @@
 					formData.append("filename", response.data.given_name);
 					formData.append("filedata", file.files[0].path);
 					axios.post('https://v13.teamproit.com/api/method/upload_file', formData)
-						.then(res => { console.log(res) })
+					// .then(res => { console.log(res) })
 				});
 
 		})
