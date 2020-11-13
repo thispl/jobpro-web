@@ -52,7 +52,7 @@
 					<div class="container clearfix">
 						<!-- website logo -->
 						<div class="logo-header mostion">
-							<a href="http://groupteampro.com/"><img src="images/logo.png" class="logo" alt=""></a>
+							<a href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
 						</div>
 						<!-- nav toggle button -->
 						<!-- nav toggle button -->
@@ -160,7 +160,8 @@
 										<div class="form-group">
 											<label></label>
 											<div class="input-group">
-												<input type="text" class="form-control" placeholder="Job Title, Keywords, or Phrase">
+												<input type="text" class="form-control"
+													placeholder="Job Title, Keywords, or Phrase">
 												<div class="input-group-append">
 													<span class="input-group-text"><i class="fa fa-search"></i></span>
 												</div>
@@ -170,7 +171,100 @@
 									<div class="col-lg-3 col-md-6">
 										<div class="form-group">
 											<!-- <label>City, State or ZIP</label> -->
-											<select id="country"></select>
+											<select id="country_fj">
+												<option>India</option>
+												<option>Nepal</option>
+												<option>Bhutan</option>
+												<option>Bengaluru</option>
+												<option>Sri Lanka</option>
+												<option>USA</option>
+												<option>Delhi</option>
+												<option>Cyprus</option>
+												<option>Kerala</option>
+												<option>Canada</option>
+												<option>UK</option>
+												<option>GCC</option>
+												<option>KSA</option>
+												<option>SEA</option>
+												<option>UAE</option>
+												<option>Iraq</option>
+												<option>Oman</option>
+												<option>Egypt</option>
+												<option>Ghana</option>
+												<option>Italy</option>
+												<option>Kenya</option>
+												<option>Libya</option>
+												<option>Qatar</option>
+												<option>Spain</option>
+												<option>Sudan</option>
+												<option>Africa</option>
+												<option>Brazil</option>
+												<option>Dammam</option>
+												<option>France</option>
+												<option>Greece</option>
+												<option>Guinea</option>
+												<option>Jeddah</option>
+												<option>Kuwait</option>
+												<option>London</option>
+												<option>Norway</option>
+												<option>Poland</option>
+												<option>Riyadh</option>
+												<option>Russia</option>
+												<option>Rwanda</option>
+												<option>Sweden</option>
+												<option>Uganda</option>
+												<option>Zambia</option>
+												<option>Algeria</option>
+												<option>Austria</option>
+												<option>Bahrain</option>
+												<option>Belarus</option>
+												<option>Belgium</option>
+												<option>Denmark</option>
+												<option>Ethopia</option>
+												<option>Finland</option>
+												<option>Germany</option>
+												<option>Hungary</option>
+												<option>Iceland</option>
+												<option>Ireland</option>
+												<option>Moldova</option>
+												<option>Nigeria</option>
+												<option>Romania</option>
+												<option>Ukraine</option>
+												<option>Bulgaria</option>
+												<option>Portugal</option>
+												<option>Slovakia</option>
+												<option>Tanzania</option>
+												<option>Thailand</option>
+												<option>Zimbabwe</option>
+												<option>Australia</option>
+												<option>Singapore</option>
+												<option>Netherlands</option>
+												<option>New Zealand</option>
+												<option>Philippines</option>
+												<option>South Korea</option>
+												<option>South Sudan</option>
+												<option>switzerland</option>
+												<option>South Africa</option>
+												<option>North America</option>
+												<option>European Union</option>
+												<option>United Kingdom</option>
+												<option>Papua New Guinea</option>
+												<option>China</option>
+												<option>Japan</option>
+												<option>Brunei</option>
+												<option>Armenia</option>
+												<option>Combodia</option>
+												<option>Malaysia</option>
+												<option>Maldives</option>
+												<option>Indonesia</option>
+												<option>Vietnam</option>
+												<option>Rest Of The World</option>
+												<option>Turkey</option>
+												<option>Lebanon</option>
+												<option>Jordan</option>
+
+
+											</select>
 											<!-- <div class="input-group">
 												<input type="text" class="form-control" placeholder="">
 												<div class="input-group-append">
@@ -182,12 +276,23 @@
 									</div>
 									<div class="col-lg-3 col-md-6">
 										<div class="form-group">
-											<select id="category"></select>
+											<select id="category_fj">
+												<option>Sales & Marketing</option>
+												<option>Electrical & Electronics</option>
+												<option>Restaurant / Food Service</option>
+												<option>Construction / Facilities</option>
+												<option>Automobile</option>
+												<option>Accounting / Finance</option>
+												<option>Information Technology</option>
+												<option>Human Resource</option>
+
+											</select>
 										</div>
 									</div>
 									<div class="col-lg-2 col-md-6">
 										<!-- <button type="submit" id="search" class="site-button btn-block">Find Job</button> -->
-										<a href="browse-job.html" class="site-button btn-block" id="search">Find Job</a>
+										<a href="browse-job.html" class="site-button btn-block" id="find_job">Find
+											Job</a>
 									</div>
 								</div>
 							</form>
@@ -454,7 +559,9 @@
 										<div class="testimonial-pic radius"><img src="images/testimonials/pic3.jpg"
 												alt="" width="100" height="100"></div>
 										<div class="testimonial-text">
-											<p>Your recruitment process is so much more sophisticated than other agencies, I can imagine that your agency will change the way recruitment is done.
+											<p>Your recruitment process is so much more sophisticated than other
+												agencies, I can imagine that your agency will change the way recruitment
+												is done.
 											</p>
 										</div>
 										<div class="testimonial-detail"> <strong class="testimonial-name">Richard
@@ -635,6 +742,7 @@
 		<script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 		<script src="plugins/paroller/skrollr.min.js"></script><!-- PAROLLER -->
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
 		<script>
 			// $("#task_id") = "KWT"
@@ -827,42 +935,35 @@
 				//   })
 				//   } 
 				//   });
-				var cat = "Category?limit_page_length=100"
-				axios
-					.get(baseurl + cat)
-					.then(response => (
-						// console.log(response.data.data),
-						$.each(response.data.data, function (i, d) {
-							$('#category').append($("<option></option>").attr("value", d.name).text(d.name))
-						})
-					)
-					)
-				var country = "Territory?limit_page_length=1000"
-				axios
-					.get(baseurl + country)
-					.then(response => (
-						$.each(response.data.data, function (i, d) {
-							$('#country').append($("<option></option>").attr("value", d.name).text(d.name))
-						})
-					)
-					)
+				// var cat = "Category?limit_page_length=100"
+				// axios
+				// 	.get(baseurl + cat)
+				// 	.then(response => (
+				// 		// console.log(response.data.data),
+				// 		$.each(response.data.data, function (i, d) {
+				// 			$('#category').append($("<option></option>").attr("value", d.name).text(d.name))
+				// 		})
+				// 	)
+				// 	)
+				// var country = "Territory?limit_page_length=1000"
+				// axios
+				// 	.get(baseurl + country)
+				// 	.then(response => (
+				// 		$.each(response.data.data, function (i, d) {
+				// 			$('#country').append($("<option></option>").attr("value", d.name).text(d.name))
+				// 		})
+				// 	)
+				// 	)
 
 			})
 
-			// $(search).click(function () {
+			$(find_job).click(function () {
 
-			// 	var cat = document.getElementById("category").value
-			// 	var ctry = document.getElementById("country").value
-			// 	console.log(cat)
-			// 	console.log(ctry)
-			// 	var task = ''
-			// 	var search = "Task?fields=[%22name%22,%22subject%22,%22territory%22,%22description%22,%22customer%22,%22project%22,%22currency%22,%22amount%22,%22amount%22,%22job_category%22,%22creation%22,%22minimum_experience%22,%22maximum_experience%22,%22qualification%22,%22specialization%22]&&filters=[[%22service%22,%22=%22,%22REC%22],[%22status%22,%22!=%22,%22Completed%22],[%22status%22,%22!=%22,%22Cancelled%22],[%22status%22,%22!=%22,%22Hold%22],[%22job_category%22,%22=%22,%22"+cat+"%22],[%22territory%22,%22=%22,%22"+ctry+"%22]]&&limit_page_length=5000"
-			// 	axios
-			// 		.get(baseurl + search)
-			// 		.then(response =>
-			// 		console.log(response)
-			// 		)
-			// })
+				var cat = document.getElementById("category_fj").value
+				var ctry = document.getElementById("country_fj").value
+				localStorage.setItem("category_fj", cat)
+				localStorage.setItem("country_fj", ctry)
+			})
 		</script>
 
 </body>
