@@ -87,7 +87,7 @@
 						<!-- main nav -->
 						<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
 							<ul class="nav navbar-nav">
-								<li class="active">
+								<li>
 									<a href="index.html">Home <i class="fa fa-chevron-down"></i></a>
 									<!-- <ul class="sub-menu">
 									<li><a href="index-2.html" class="dez-page">Home 1</a></li>
@@ -159,7 +159,7 @@
 						<!-- Breadcrumb row -->
 						<div class="breadcrumb-row">
 							<ul class="list-inline">
-								<li><a href="#">Home</a></li>
+								<li><a href="index.html">Home</a></li>
 								<li>Submit Resume</li>
 							</ul>
 						</div>
@@ -176,6 +176,11 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<form>
+									<div class="form-group">
+										<label>Position</label>
+										<input type="text" id="selected_job" class="form-control" placeholder="Position"
+											required>
+									</div>
 									<div class="form-group">
 										<label>Your name</label>
 										<input type="text" id="name" class="form-control" placeholder="Your Full Name"
@@ -2240,7 +2245,7 @@ select.selector {
 	</script>
 	<script>
 		// var select = document.getElementById("city");
-		// var baseurl = "https://v13.teamproit.com/api/resource/"
+		var baseurl = "https://v13.teamproit.com/api/resource/"
 		// var district = "District?limit_page_length=1000"
 		// var state = "State?limit_page_length=1000"
 		// var country = "Country?limit_page_length=1000"
@@ -2290,25 +2295,31 @@ select.selector {
 					passport_no: document.getElementById("pp_no").value,
 					issued_date: document.getElementById("issue").value,
 					expiry_date: document.getElementById("expiry").value,
-					passport: document.getElementById("resume").value
+					// passport: document.getElementById("resume").value,
+					candidate_task: [{ "customer": jds.customer, "project": jds.project, "task": j }]
 				})
 				.then((response) => {
+					// alert('Success')
+					var msg;
+					if (confirm("Click OK to Submit your Application?") == true) {
+						msg = "Your Application Submitted successfully!";
+						window.location.href = "file:///home/subash/Downloads/jobpro/jobpro/index.html";
+					}
 					// console.log(response.data.data.name)
-					localStorage.setItem("candidate_id", response.data.data.name)
-					var file = document.querySelector('#resume');
-					let formData = new FormData();
-					formData.append("doctype", "Candidate");
-					formData.append("docname", response.data.name);
-					formData.append("filename", response.data.given_name);
-					formData.append("filedata", file.files[0].path);
-					axios.post('https://v13.teamproit.com/api/method/upload_file', formData)
+					// localStorage.setItem("candidate_id", response.data.data.name)
+					// var file = document.querySelector('#resume');
+					// let formData = new FormData();
+					// formData.append("doctype", "Candidate");
+					// formData.append("docname", response.data.name);
+					// formData.append("filename", response.data.given_name);
+					// formData.append("filedata", file.files[0].path);
+					// axios.post('https://v13.teamproit.com/api/method/upload_file', formData)
 					// .then(res => { console.log(res) })
 				});
-
 		})
 		$(uploadS3).click(function () {
 			console.log('test')
-			var s3 = new AWS.S3({ params: { Bucket: 'jobpro-bucket' } });
+			var s3 = new AWS.S3({ params: { Bucket: 'jobpro-bucket' }});
 			var file = document.getElementById('photo').files;
 			// console.log(file[0].name)
 			var params = {
@@ -2332,7 +2343,7 @@ select.selector {
 				// }
 			});
 		})
-	</script>name
+	</script>
 	<script>
 		var myObject = new Vue({
 			el: '#app',
@@ -2351,7 +2362,6 @@ select.selector {
 				// 		// console.log(response.data.data)
 				// 	)
 				// 	)
-
 				// axios
 				// .get("https://v13.teamproit.com/api/resource/City?limit_page_length=300")
 				// .then(response => (this.cities = response.data.data));
@@ -2368,11 +2378,15 @@ select.selector {
 				// 	let file = files[0]
 				// 	debugger
 				// }
-
 			},
 		})
 	</script>
 	<script>
+			var j = sessionStorage.getItem('selected_job')
+			var jd = sessionStorage.getItem(j)
+			var jds = JSON.parse(jd)
+			document.getElementById('selected_job').value = jds.subject
+
 		// $("#task_id") = "KWT"
 		// var baseurl = "https://v13.teamproit.com/api/resource/"
 		// var st = "State?limit_page_length=300"

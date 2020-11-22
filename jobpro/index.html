@@ -83,7 +83,7 @@
 						<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
 							<ul class="nav navbar-nav">
 								<li class="active">
-									<a href="#">Home <i class="fa fa-chevron-down"></i></a>
+									<a href="index.html">Home <i class="fa fa-chevron-down"></i></a>
 									<!-- <ul class="sub-menu">
 									<li><a href="index-2.html" class="dez-page">Home 1</a></li>
 									<li><a href="index-3.html" class="dez-page">Home 2</a></li>
@@ -156,7 +156,7 @@
 									class="text-primary">50,000</span> Open Jobs.</h2>
 							<form class="dezPlaceAni">
 								<div class="row">
-									<div class="col-lg-4 col-md-6">
+									<!-- <div class="col-lg-4 col-md-6">
 										<div class="form-group">
 											<label></label>
 											<div class="input-group">
@@ -167,8 +167,8 @@
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-lg-3 col-md-6">
+									</div> -->
+									<div class="col-lg-5 col-md-6">
 										<div class="form-group">
 											<!-- <label>City, State or ZIP</label> -->
 											<select id="country_fj">
@@ -274,7 +274,7 @@
 											</div> -->
 										</div>
 									</div>
-									<div class="col-lg-3 col-md-6">
+									<div class="col-lg-5 col-md-6">
 										<div class="form-group">
 											<select id="category_fj">
 												<option>Sales & Marketing</option>
@@ -285,7 +285,6 @@
 												<option>Accounting / Finance</option>
 												<option>Information Technology</option>
 												<option>Human Resource</option>
-
 											</select>
 										</div>
 									</div>
@@ -747,7 +746,7 @@
 		<script>
 			// $("#task_id") = "KWT"
 			var baseurl = "https://v13.teamproit.com/api/resource/"
-			var task = "Task?fields=[%22name%22,%22subject%22,%22territory%22,%22description%22,%22customer%22,%22project%22,%22currency%22,%22amount%22,%22amount%22,%22job_category%22,%22creation%22,%22minimum_experience%22,%22maximum_experience%22,%22qualification%22,%22specialization%22]&&filters=[[%22service%22,%22=%22,%22REC%22],[%22status%22,%22!=%22,%22Completed%22],[%22status%22,%22!=%22,%22Cancelled%22],[%22status%22,%22!=%22,%22Hold%22]]&&limit_page_length=5000"
+			var task = "Task?fields=[%22name%22,%22subject%22,%22territory%22,%22description%22,%22customer%22,%22project%22,%22currency%22,%22amount%22,%22amount%22,%22job_category%22,%22creation%22,%22minimum_experience%22,%22maximum_experience%22,%22qualification%22,%22specialization%22,%22salary_type%22,%22from%22,%22to%22]&&filters=[[%22service%22,%22=%22,%22REC%22],[%22status%22,%22!=%22,%22Completed%22],[%22status%22,%22!=%22,%22Cancelled%22],[%22status%22,%22!=%22,%22Hold%22]]&&limit_page_length=5000"
 			$(document).ready(function () {
 				$.ajax({
 					type: "GET",
@@ -757,7 +756,7 @@
 					success: function (data) {
 						$.each(data.data, function (i, d) {
 							var t = JSON.stringify(d)
-							localStorage.setItem(d.name, t)
+							sessionStorage.setItem(d.name, t)
 						})
 						// var task_list = JSON.stringify(data.data)
 						// localStorage.setItem("task_list",task_list)
@@ -782,6 +781,13 @@
 						var am = 0
 						var all_task = []
 						$.each(data.data, function (d, task) {
+							amount = ''
+							if (task.salary_type != 'Range') {
+								amount = '' + task.amount + ''
+							}
+							else if (task.salary_type == 'Range') {
+								amount = '' + task.from + ' - ' + task.to + ''
+							}
 							if (d < 20) {
 								$("#task").append(
 									'<li>\
@@ -804,7 +810,7 @@
 													<span>Apply Now </span>\
 												</div>\
 												<div class="salary-bx">\
-													<span>'+ task.amount + ' ' + task.currency + '</span>\
+													<span>'+amount + ' ' + task.currency + '</span>\
 												</div>\
 											</div>\
 											<span class="post-like fa fa-heart-o"></span>\
@@ -961,8 +967,8 @@
 
 				var cat = document.getElementById("category_fj").value
 				var ctry = document.getElementById("country_fj").value
-				localStorage.setItem("category_fj", cat)
-				localStorage.setItem("country_fj", ctry)
+				sessionStorage.setItem("category_fj", cat)
+				sessionStorage.setItem("country_fj", ctry)
 			})
 		</script>
 
