@@ -43,6 +43,26 @@
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.357.0.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+	<script type="text/javascript">
+
+		//Bucket Configurations
+		
+		 var bucketName = "jobpro-bucket";
+		 var bucketRegion = "Regions.AP_SOUTH_1";
+		 var IdentityPoolId = "ap-south-1:9223cfd8-0940-4d6a-a16f-34f42eea213d";
+		
+		 AWS.config.update({
+						region: "Regions.AP_SOUTH_1",
+						credentials: new AWS.CognitoIdentityCredentials({
+						IdentityPoolId: "ap-south-1:9223cfd8-0940-4d6a-a16f-34f42eea213d"
+						})
+					});
+		
+					var s3 = new AWS.S3({
+						apiVersion: '2006-03-01',
+						params: {Bucket: "jobpro-bucket"}
+				});
+	</script>
 </head>
 
 <body>
@@ -2060,7 +2080,7 @@
 								<div class="form-group">
 									<label>Resume</label>
 									<div class="custom-file">
-										<input type="file" class="site-button" id="photo">
+										<input type="file" class="site-button" id="resume">
 										<!-- <input type="file" class="site-button" id="resume"> -->
 										<!-- <input type="file" @change="uploadfile('thumbnail',$event.target.files)" /> -->
 									</div>
@@ -2077,7 +2097,7 @@
 						</div>
 						<hr>
 						<center><button type="submit" id="submit" class="site-button">Submit</button></center>
-						<!-- <button id="uploadS3">Greet</button> -->
+						<button id="s3upload">submit</button>
 
 					</div>
 				</div>
@@ -2317,33 +2337,38 @@ select.selector {
 					// .then(res => { console.log(res) })
 				});
 		})
-		$(uploadS3).click(function () {
-			console.log('test')
-			var s3 = new AWS.S3({ params: { Bucket: 'jobpro-bucket' }});
-			var file = document.getElementById('photo').files;
-			// console.log(file[0].name)
-			var params = {
-				Bucket: 'jobpro-bucket',
-				Key: file[0].name,
-				Body: file
-			};
-			url = ''
-			// payload = {'remote_id': doc.document_type}
-			// response = requests.request("POST", url,files = files, data = payload)
-
-			s3.upload(params, function (err, data) {
-				// console.log(err)
-				// console.log(data)
-				// if (err) {
-				// 	console.log(err, err.stack);
-				// 	showModal('Failed to upload', 'Network Error. Please contact admin.');
-				// } else {
-				// 	console.log(data.key + ' successfully uploaded to' + data.Location);
-				// 	showModal('Upload Success!', data.key + ' successfully uploaded!');
-				// }
-			});
-		})
 	</script>
+	<script>
+		// function s3upload() { 
+			$(s3upload).click(function () { 
+			console.log("hiii")
+                var files = document.getElementById('resume').files;
+                if (files) 
+                {
+                    var file = files[0];
+                    var fileName = file.name;
+                    var filePath = 'my-first-bucket-path/' + fileName;
+                    var fileUrl = 'https://' + "Regions.AP_SOUTH_1" + '.amazonaws.com/my-first-bucket/' +  filePath;
+					console.log(fileUrl)
+                    s3.upload({
+                                    Key: filePath,
+                                    Body: file,
+                                    ACL: 'public-read'
+                                }, function(err, data) {
+									console.log("jjjj")
+                                    // if(err) {
+                                    //     reject('error');
+                                    // }
+                                    
+                                    alert('Successfully Uploaded!');
+                                }).on('httpUploadProgress', function (progress) {
+                                    var uploaded = parseInt((progress.loaded * 100) / progress.total);
+                                    $("progress").attr('value', uploaded);
+                                });
+                }
+      });
+	</script>
+	
 	<script>
 		var myObject = new Vue({
 			el: '#app',
